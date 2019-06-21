@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form Design</title>
+    <link rel="stylesheet" type="text/css" href="../Content/style.css">
+</head>
+<body>
+    <div class="loginbox">
+
+        <h1>Login Here</h1>
+
+        <img src="../image/avatar.png" style="width:80px; height: 80px"/>
+
+        @using (Html.BeginForm("Login", "Human", FormMethod.Post))
+        {
+            <p>Email</p>
+            @*<input type="text" name="username" placeholder="Enter UserName">*@
+            @Html.TextBox("e");
+            <p>Password</p>
+            @*<input type="Password" name="password" placeholder="Enter Password">*@
+            @Html.Password("p");
+            <input type="submit" name="submit" value="Login">
+            <a href="#">Forgot password </a><br>
+            <a href="#">Don't have an account</a>
+
+        }
+
+        @Html.ActionLink("Click to SignUp Page", "SignUp", "Human", new { @class = "edit" })
+    </div>
+   
+
+</body>
+</html>

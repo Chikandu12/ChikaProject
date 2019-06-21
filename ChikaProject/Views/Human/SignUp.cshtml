@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>SignUp Design</title>
+    <link rel="stylesheet" href="../Content/syle.css">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+</head>
+<body>
+    <div class="signup-form">
+        @*<form class="" action="SignUp.html" method="post">*@
+        @using (Html.BeginForm("SignUp", "Human", FormMethod.Post))
+        {
+            <h1>Sign Up</h1>
+            @* <input type="text" placeholder="Full Name" class="txtb">*@
+            @Html.TextBox("FirstName", "", new { @class = "txtb", placeholder = "Full Name" });
+
+            @*<input type="email" placeholder="Email" class="txtb">*@
+            @Html.TextBox("Email", "", new { @class = "txtb", placeholder = "Email" });
+
+            @*<input type="password" placeholder="password" class="txtb">*@
+            @Html.Password("Password", "", new { @class = "txtb", placeholder = "Password" });
+
+            <input type="submit" value="Create Account" class="signup-btn">
+            <a href="#">Already Have one?</a>
+        }
+
+
+        @Html.ActionLink("Click to Login Page", "Login", "Human")
+
+    </div>
+
+</body>
+</html>

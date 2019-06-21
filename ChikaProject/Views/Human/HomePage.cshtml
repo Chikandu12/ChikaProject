@@ -1,0 +1,40 @@
+﻿@using ChikaProject.Models
+@{
+    Layout = null;
+
+    HumanTb hu = TempData["Data"] as HumanTb;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Homepage Design </title>
+    <link rel="stylesheet" href="../Content/homepage.css">
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <div class="logo">
+                <img src="../image/LV.png" />
+                @*<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmn7RSX4r5bzpzKmvK9Skr2CODTMJZDGRRCaoSEOQdSEiVQZR9">*@
+            </div>
+            <ul class="nav-area">
+                <li><a href="#">Home</a></li>
+                @*<li><a href="#">About</a></li>*@
+                <li>@Html.ActionLink("About", "Details", "Human", new { id = hu.FirstName })</li>
+                @*<li>@Html.ActionLink("Click To Edit", "Edit/"+@hu.Email, "Human", new { id=hu.Email})</li>*@
+                <li>@Html.ActionLink("Click To Edit", "Edit", "Human", new { em = hu.Email }, null)</li> @*Email Pattern Approach*@
+                
+                <li><a href="#">Contacts</a></li>
+            </ul>
+        </div>
+
+        <div class="welcome-text">
+            <h1>We Are Creative, Mr. @hu.FirstName</h1>
+            <a href="#">Contact Us</a>
+        </div>
+    </header>
+
+</body>
+</html>
